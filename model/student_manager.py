@@ -12,13 +12,14 @@ class StudentLinkedList:
         if self.findStudentById(student.id):
             # This condition just for double check
             raise Exception("This student was existed")
-        
-        current = self.head
+
         if(self.head):
             current = self.head
+            
             while(current.next):
                 current = current.next
-                current.next = new_student_node
+            
+            current.next = new_student_node
         else:
             self.head = new_student_node
         return True
