@@ -1,6 +1,6 @@
 class StudentNode:
     def __init__(self, student = None, next=None): 
-        self.data = student
+        self.student = student
         self.next = next
 
 class StudentLinkedList:
@@ -8,7 +8,7 @@ class StudentLinkedList:
         self.head = None
 
     def insert_new_student(self, student):
-        new_student = StudentNode(student)
+        new_student_node = StudentNode(student)
         if self.findById(student.id):
             # This condition just for double check
             raise Exception("This student was existed")
@@ -16,21 +16,21 @@ class StudentLinkedList:
             current = self.head
             while(current.next):
                 current = current.next
-                current.next = new_student
+                current.next = new_student_node
         else:
-            self.head = new_student
+            self.head = new_student_node
 
     def update_student(self, student_update):
-        student = self.findById(student_update.id) 
-        if not student: 
+        student_node = self.findById(student_update.id) 
+        if not student_node: 
             # This condition just for double check
             raise Exception("Can not find student")
-        student.update(student_update)
+        student_node.student.update(student_update)
 
     def delete_student(self, id):
         current = self.head
         if (not current):
-            if (current.data.id == id):
+            if (current.student.id == id):
                 self.head = current.next
                 current = None
                 return True
@@ -52,7 +52,7 @@ class StudentLinkedList:
     def findById(self,id):
         current = self.head
         while(current):
-            if current.data.id == id:
+            if current.student.id == id:
                 return current
             current = current.next
         return None
