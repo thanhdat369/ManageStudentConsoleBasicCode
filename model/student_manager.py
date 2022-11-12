@@ -26,7 +26,28 @@ class StudentLinkedList:
             # This condition just for double check
             raise Exception("Can not find student")
         student.update(student_update)
-        
+
+    def delete_student(self, id):
+        current = self.head
+        if (not current):
+            if (current.data.id == id):
+                self.head = current.next
+                current = None
+                return True
+ 
+        while (current):
+            if current.data.id == id:
+                break
+            prev = temp
+            temp = temp.next
+ 
+        if(not current):
+            return False
+         
+        prev.next = temp.next
+        current = None
+        return True
+    
 
     def findById(self,id):
         current = self.head
