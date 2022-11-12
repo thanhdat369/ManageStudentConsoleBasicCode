@@ -25,7 +25,8 @@ class StudentLinkedList:
         if not student: 
             # This condition just for double check
             raise Exception("Can not find student")
-        # student.update()
+        student.update(student_update)
+        
 
     def findById(self,id):
         current = self.head
