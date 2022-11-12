@@ -10,7 +10,7 @@ def clear_screen():
 def get_integer_input(msg):
     int_input = None
     try:
-        int_input = int(input(msg))
+        int_input = int(input(msg).strip())
     except:
         pass
     return int_input
@@ -18,7 +18,7 @@ def get_integer_input(msg):
 def get_float_input(msg):
     int_input = None
     try:
-        int_input = float(input(msg))
+        int_input = float(input(msg).strip())
     except:
         pass
     return int_input
@@ -26,7 +26,7 @@ def get_float_input(msg):
 def get_string_input(msg):
     int_input = None
     try:
-        int_input = input(msg)
+        int_input = input(msg).strip()
     except:
         pass
     return int_input

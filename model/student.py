@@ -13,4 +13,5 @@ class Student:
         self.score = update_student.score
 
     def __str__(self) -> str:
-        return f"{self.id}-{self.name}-{self.address}-{self.score}"
+        return f"{self.id}-{self.name}-{self.address}-{self.score}"+\
+                "\n------------------------"
